@@ -20,7 +20,7 @@ class FairFaceDataset(Dataset):
         self.root_dir = root_dir
         self.transform = transform
         self.classes = list(self.labels["race"].unique())
-        self.idx_to_class = {i: j for i, j in enumerate(classes)}
+        self.idx_to_class = {i: j for i, j in enumerate(self.classes)}
         self.class_to_idx = {value: key for key, value in self.idx_to_class.items()}
 
     def __len__(self):
