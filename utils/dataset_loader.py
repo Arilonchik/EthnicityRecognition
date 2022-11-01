@@ -19,12 +19,15 @@ class FairFaceDataset(Dataset):
         self.labels = pd.read_csv(csv_file)
         self.root_dir = root_dir
         self.transform = transform
-        classes = list(self.labels["race"].unique())
+        self.classes = list(self.labels["race"].unique())
         self.idx_to_class = {i: j for i, j in enumerate(classes)}
         self.class_to_idx = {value: key for key, value in self.idx_to_class.items()}
 
     def __len__(self):
         return len(self.labels)
+
+    def get_classes(self):
+        return self.classes
 
     def __getitem__(self, idx):
         if torch.is_tensor(idx):
@@ -48,4 +51,4 @@ def gen_dataloader(data_folder, csv_file, transformers, batch_size):
     face_dataset = FairFaceDataset(csv_file=csv_file, root_dir=data_folder, transform=transformers)
     dataloader = DataLoader(face_dataset, batch_size=batch_size,
                             shuffle=True, num_workers=4)
-    return dataloader, len(face_dataset)
+    return dataloader, len(face_dataset), face_dataset.get_classes()
