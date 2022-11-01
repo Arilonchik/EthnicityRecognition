@@ -48,4 +48,4 @@ def gen_dataloader(data_folder, csv_file, transformers, batch_size):
     face_dataset = FairFaceDataset(csv_file=csv_file, root_dir=data_folder, transform=transformers)
     dataloader = DataLoader(face_dataset, batch_size=batch_size,
                             shuffle=True, num_workers=4)
-    return dataloader
+    return dataloader, len(face_dataset)
