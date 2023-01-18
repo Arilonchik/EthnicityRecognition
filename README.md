@@ -20,13 +20,18 @@ A model for determining a person's race by his photo. You can upload a photo of 
 <img src="./img/resnet34_2_loss.jpg" alt="example" width="40%">
 </p>
 
-## Гиперпараметры
+## Hyperparameters
 * 25 epoch
 * 0.00009 lr
 * Adam
 * 128 batch-size
 
-## Характеристики
+## Specifications
 * Best model - Resnet34 pre-trained + 2 linear layers
 * Best test acc 70 %
 * One image check time - 600ms
+
+## Hardware
+* CPU count: 1
+* GPU count: 1
+* GPU Type: P100
