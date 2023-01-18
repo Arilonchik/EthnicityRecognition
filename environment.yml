@@ -1,0 +1,13 @@
+name: myenv
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - flask
+  - tensorflow
+  - torchvision
+  - numpy
+  - Pillow
+  - pytorch
+  - keras
+  - opencv-python=4.5.5.64

@@ -136,11 +136,11 @@ class YOLO(object):
 
             print(text, (left, top), (right, bottom))
 
-            # for thk in range(thickness):
-            #     draw.rectangle(
-            #         [left + thk, top + thk, right - thk, bottom - thk],
-            #         outline=(51, 178, 255))
-            # del draw
+            for thk in range(thickness):
+                draw.rectangle(
+                    [left + thk, top + thk, right - thk, bottom - thk],
+                    outline=(51, 178, 255))
+            del draw
 
         end_time = timer()
         print('*** Processing time: {:.2f}ms'.format((end_time -

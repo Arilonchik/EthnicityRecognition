@@ -11,6 +11,12 @@ from PIL import Image
 
 def get_args():
     parser = argparse.ArgumentParser()
+    parser.add_argument("mode", type=str, choices=["async", "sync"],
+                        help="Working mode, sync - for online usage,"
+                             " async - for sorting dataset or get meta, (Now only async is available)")
+    parser.add_argument("-m", "--meta",
+                        help="If passed - it makes only meta file, without sorting photos in done dir",
+                        action="store_true")
     parser.add_argument('--model', type=str, default='./Face_detector/model-weights/YOLO_Face.h5',
                         help='path to model weights file')
     parser.add_argument('--anchors', type=str, default='./Face_detector/cfg/yolo_anchors.txt',

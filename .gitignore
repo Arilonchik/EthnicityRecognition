@@ -128,6 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-models/runs
 runs
 fairface-img-margin025-trainval
+experiments/*
+experiments
+FER/weights/*
+FER/weights/

@@ -1,0 +1,14 @@
+{
+  "version": "0.2.2",
+  "classes": {
+    "East Asian": 0,
+    "Indian": 1,
+    "Black": 2,
+    "White": 3,
+    "Middle Eastern": 4,
+    "Latino_Hispanic": 5,
+    "Southeast Asian": 6
+  },
+  "model_type": "resnet34",
+  "weights_path": "FER/weights/model_dict"
+}
